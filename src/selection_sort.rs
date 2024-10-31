@@ -1,4 +1,4 @@
-pub fn selection_sort(v: &mut Vec<i64>) {
+pub fn selection_sort(v: &mut Vec<i32>) {
     for i in 0..v.len() {
         let mut min_index = i;
         for j in i + 1..v.len() {
@@ -14,7 +14,7 @@ pub fn selection_sort(v: &mut Vec<i64>) {
 mod test {
     use super::*;
 
-    fn crate_actual_and_expect(mut v: Vec<i64>) -> (Vec<i64>, Vec<i64>) {
+    fn crate_actual_and_expect(mut v: Vec<i32>) -> (Vec<i32>, Vec<i32>) {
         let mut expect = v.clone();
         selection_sort(&mut v);
         expect.sort();
@@ -29,14 +29,13 @@ mod test {
 
     #[test]
     fn big_range() {
-        let (actual, expect) =
-            crate_actual_and_expect(vec![-4, 32034243, 239, -32348, 3204823422, 0]);
+        let (actual, expect) = crate_actual_and_expect(vec![-4, 32034243, 239, -32348, 3204823, 0]);
         assert_eq!(actual, expect);
     }
 }
 
 fn main() {
-    let mut v: Vec<i64> = vec![3, 1, 9, 0, 4];
+    let mut v: Vec<i32> = vec![3, 1, 9, 0, 4];
     println!("{:?}", v);
     selection_sort(&mut v);
     println!("{:?}", v);
