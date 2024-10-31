@@ -11,6 +11,18 @@ pub fn bubble_sort(v: &mut Vec<i32>) {
     }
 }
 
+pub fn height_checker(heights: Vec<i32>) -> i32 {
+    let mut expect = heights.clone();
+    bubble_sort(&mut expect);
+    let mut count = 0;
+    for i in 0..heights.len() {
+        if heights[i] != expect[i] {
+            count += 1;
+        }
+    }
+    count
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
