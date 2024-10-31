@@ -12,3 +12,7 @@ path = "src/selection_sort.rs"
 [[bin]]
 name = "bubble_sort"
 path = "src/bubble_sort.rs"
+
+[[bin]]
+name = "insertion_sort"
+path = "src/insertion_sort.rs"

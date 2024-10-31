@@ -24,7 +24,7 @@ pub fn height_checker(heights: Vec<i32>) -> i32 {
 }
 
 #[cfg(test)]
-mod test {
+mod bubble_sort_test {
     use super::*;
 
     fn crate_actual_and_expect(mut v: Vec<i32>) -> (Vec<i32>, Vec<i32>) {

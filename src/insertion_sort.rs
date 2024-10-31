@@ -1,22 +1,23 @@
-pub fn selection_sort(v: &mut Vec<i32>) {
-    for i in 0..v.len() {
-        let mut min_index = i;
-        for j in i + 1..v.len() {
-            if v[j] < v[min_index] {
-                min_index = j;
+pub fn insertion_sort(v: &mut Vec<i32>) {
+    for i in 1..v.len() {
+        let mut cur_index = i;
+        while cur_index > 0 {
+            if v[cur_index] > v[cur_index - 1] {
+                break;
             }
+            v.swap(cur_index, cur_index - 1);
+            cur_index -= 1;
         }
-        v.swap(i, min_index);
     }
 }
 
 #[cfg(test)]
-mod selection_sort_test {
+mod insertion_sort_test {
     use super::*;
 
     fn crate_actual_and_expect(mut v: Vec<i32>) -> (Vec<i32>, Vec<i32>) {
         let mut expect = v.clone();
-        selection_sort(&mut v);
+        insertion_sort(&mut v);
         expect.sort();
         (v, expect)
     }
@@ -43,6 +44,6 @@ mod selection_sort_test {
 fn main() {
     let mut v: Vec<i32> = vec![3, 1, 9, 0, 4];
     println!("{:?}", v);
-    selection_sort(&mut v);
+    insertion_sort(&mut v);
     println!("{:?}", v);
 }
