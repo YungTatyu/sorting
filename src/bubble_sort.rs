@@ -45,6 +45,12 @@ mod test {
         let (actual, expect) = crate_actual_and_expect(vec![-4, 32034243, 239, -32348, 3204823, 0]);
         assert_eq!(actual, expect);
     }
+
+    #[test]
+    fn duplicate_nums() {
+        let (actual, expect) = crate_actual_and_expect(vec![2, -1, 0, 7, 2, 7]);
+        assert_eq!(actual, expect);
+    }
 }
 
 fn main() {
