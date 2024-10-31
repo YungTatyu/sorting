@@ -26,6 +26,13 @@ mod test {
         let (actual, expect) = crate_actual_and_expect(vec![4, 3, 9, 8, 2]);
         assert_eq!(actual, expect)
     }
+
+    #[test]
+    fn big_range() {
+        let (actual, expect) =
+            crate_actual_and_expect(vec![-4, 32034243, 239, -32348, 3204823422, 0]);
+        assert_eq!(actual, expect);
+    }
 }
 
 fn main() {
