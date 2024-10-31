@@ -9,3 +9,6 @@ edition = "2021"
 name = "selection_sort"
 path = "src/selection_sort.rs"
 
+[[bin]]
+name = "bubble_sort"
+path = "src/bubble_sort.rs"
