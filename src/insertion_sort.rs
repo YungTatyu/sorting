@@ -1,3 +1,6 @@
+/**
+ * @brief 小さい値を左から順に場所を確定させていく
+ */
 pub fn insertion_sort(v: &mut Vec<i32>) {
     for i in 1..v.len() {
         let mut cur_index = i;

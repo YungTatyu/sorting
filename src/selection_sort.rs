@@ -1,3 +1,7 @@
+/**
+ * @brief 左から順にsortしていく
+ * そのindexに該当する値を探し、見つけたらswapする
+ */
 pub fn selection_sort(v: &mut Vec<i32>) {
     for i in 0..v.len() {
         let mut min_index = i;
