@@ -1,3 +1,5 @@
+use std::usize;
+
 /**
  * @brief 小さい値を左から順に場所を確定させていく
  */
@@ -12,6 +14,45 @@ pub fn insertion_sort(v: &mut Vec<i32>) {
             cur_index -= 1;
         }
     }
+}
+
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<ListNode>>,
+}
+
+impl ListNode {
+    pub fn count_size(head: Option<Box<ListNode>>) -> usize {
+        let mut cnt: usize = 0;
+        let mut cur_node = head;
+        while let Some(node) = cur_node {
+            cur_node = node.next;
+            cnt += 1;
+        }
+        cnt
+    }
+}
+
+pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    if head.is_none() || head.as_ref().unwrap().next.is_none() {
+        return head;
+    }
+    let mut dummy = Box::new(ListNode { val: 0, next: None });
+    let mut cur_node = head;
+    while let Some(mut node) = cur_node {
+        cur_node = node.next.take();
+        let mut prev = &mut dummy;
+        while let Some(ref next) = prev.next {
+            if next.val > node.val {
+                break;
+            }
+            prev = prev.next.as_mut().unwrap();
+        }
+        node.next = prev.next.take();
+        prev.next = Some(node);
+    }
+    dummy.next
 }
 
 #[cfg(test)]
