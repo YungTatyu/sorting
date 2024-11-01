@@ -32,6 +32,12 @@ pub fn max_heapify(v: &mut Vec<i32>, size: usize, index: usize) {
     }
 }
 
+pub fn sort_array(nums: Vec<i32>) -> Vec<i32> {
+    let mut ret = nums.clone();
+    heap_sort(&mut ret);
+    ret
+}
+
 #[cfg(test)]
 mod heap_sort_test {
     use super::*;
