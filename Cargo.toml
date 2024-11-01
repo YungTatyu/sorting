@@ -16,3 +16,7 @@ path = "src/bubble_sort.rs"
 [[bin]]
 name = "insertion_sort"
 path = "src/insertion_sort.rs"
+
+[[bin]]
+name = "heap_sort"
+path = "src/heap_sort.rs"
