@@ -20,3 +20,7 @@ path = "src/insertion_sort.rs"
 [[bin]]
 name = "heap_sort"
 path = "src/heap_sort.rs"
+
+[[bin]]
+name = "utils"
+path = "src/utils.rs"
