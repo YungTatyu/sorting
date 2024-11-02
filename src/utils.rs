@@ -23,16 +23,13 @@ pub fn quick_select(nums: &mut Vec<i32>, left: usize, right: usize, k: usize) ->
 pub fn partition(nums: &mut Vec<i32>, left: usize, right: usize) -> usize {
     let pivot = nums[right];
     let mut small_index = left;
-    println!("pivot={},pi={} si={}", pivot, right, small_index);
     for i in left..right {
         if pivot > nums[i] {
             nums.swap(i, small_index);
             small_index += 1;
         }
     }
-    println!("pi={} si={}", small_index, right);
     nums.swap(small_index, right);
-    println!("si={} ", small_index);
     small_index
 }
 
